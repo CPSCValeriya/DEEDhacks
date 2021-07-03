@@ -15,10 +15,13 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
+        User user = User.getInstance();
+
         Button tasksBtn = findViewById(R.id.tasks_btn_main);
         tasksBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(MainActivity.this, TasksActivity.class);
                 startActivity(intent);
             }
