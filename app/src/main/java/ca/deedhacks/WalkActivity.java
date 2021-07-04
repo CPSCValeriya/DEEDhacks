@@ -39,6 +39,15 @@ public class WalkActivity extends AppCompatActivity{
 
         timer = new Timer();
 
+        Button locationBtn = findViewById(R.id.location);
+        locationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WalkActivity.this, LocationActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void resetTapped(View view){
@@ -124,5 +133,7 @@ public class WalkActivity extends AppCompatActivity{
 
         return String.format("%02d", hr) + ":" + String.format("%02d", min) + ":" + String.format("%02d", sec);
     }
+
+
 
 }
