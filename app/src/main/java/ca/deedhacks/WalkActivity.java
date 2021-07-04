@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class NapActivity extends AppCompatActivity{
+public class WalkActivity extends AppCompatActivity{
 
     TextView timerText;
     Button stopStartButton;
@@ -32,7 +32,7 @@ public class NapActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nap);
+        setContentView(R.layout.activity_walk);
 
         timerText = (TextView) findViewById(R.id.text_timer);
         stopStartButton = (Button) findViewById(R.id.btn_start);
@@ -75,10 +75,10 @@ public class NapActivity extends AppCompatActivity{
     public void startStopTapped(View view){
 
         if(ifTimer == false){
-            ifTimer = true;
-            stopStartButton.setText("STOP");
+           ifTimer = true;
+           stopStartButton.setText("STOP");
 
-            startTimer();
+           startTimer();
         }
         else{
             ifTimer = false;
@@ -103,20 +103,20 @@ public class NapActivity extends AppCompatActivity{
                     }
                 });
 
-
+                
             }
         };
         timer.scheduleAtFixedRate(timerTask, 0, 1000);
     }
 
     private String getTimerText() {
-
+        
         int rounded = (int)Math.round(time);
-
+       
         int sec = ((rounded % 86400) % 3600) % 60;
         int min = ((rounded % 86400) % 3600) / 60;
         int hr = ((rounded % 86400) / 3600);
-
+        
         return formatTime(sec, min, hr);
     }
 
