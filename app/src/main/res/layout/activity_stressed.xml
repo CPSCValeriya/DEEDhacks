@@ -26,6 +26,7 @@
         android:layout_marginTop="300dp"
         android:layout_marginBottom="50dp"
         android:backgroundTint="#00FFFFFF"
+        android:onClick="musicplay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +53,7 @@
         android:layout_marginEnd="250dp"
         android:layout_marginBottom="50dp"
         android:backgroundTint="#00FFFFFF"
+        android:onClick="musicpause"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,20 +74,21 @@
         app:srcCompat="@android:drawable/ic_media_pause" />
 
     <Button
-        android:id="@+id/btn_next"
+        android:id="@+id/btn_stop"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="250dp"
         android:layout_marginTop="300dp"
         android:layout_marginBottom="50dp"
         android:backgroundTint="#00FFFFFF"
+        android:onClick="musicstop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView_next"
+        android:id="@+id/imageView_stop"
         android:layout_width="62dp"
         android:layout_height="56dp"
         android:layout_marginStart="250dp"
@@ -96,5 +99,18 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_next" />
+        app:srcCompat="@android:drawable/ic_delete" />
+
+    <TextView
+        android:id="@+id/songNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="650dp"
+        android:gravity="center"
+        android:text="Meditation Time"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
