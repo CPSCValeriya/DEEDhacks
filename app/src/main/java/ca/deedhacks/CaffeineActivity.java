@@ -14,6 +14,9 @@ public class CaffeineActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_caffeine);
 
+        User user = User.getInstance();
+        user.addPoints(10);
+
         WebView wb=(WebView)findViewById(R.id.webView1);
         WebSettings webSettings=wb.getSettings();
         webSettings.setJavaScriptEnabled(true);

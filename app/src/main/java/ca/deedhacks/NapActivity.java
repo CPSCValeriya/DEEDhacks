@@ -32,6 +32,7 @@ public class NapActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_nap);
 
         timerText = (TextView) findViewById(R.id.text_timer);

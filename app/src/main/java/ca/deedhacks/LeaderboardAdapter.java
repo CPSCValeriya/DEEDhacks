@@ -61,7 +61,7 @@ public class LeaderboardAdapter extends BaseAdapter{
         usersTxt.setText(users.get(position));
         pointsTxt.setText(points.get(position).toString());
 
-        if(position == 1){
+        if(users.get(position).equals("Me")){
             usersTxt.setTypeface(null, Typeface.BOLD);
             pointsTxt.setTypeface(null, Typeface.BOLD);
         }

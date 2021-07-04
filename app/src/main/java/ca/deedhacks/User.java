@@ -12,7 +12,7 @@ public class User {
 
     private User(){
 
-        name = "Jane Doe";
+        name = "Me";
         numPoints = 0;
         taskHistory = new ArrayList<>();
         pointsHistory = new ArrayList<>();
