@@ -10,11 +10,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListAdapter;
 
-public class TiredActivity extends AppCompatActivity {
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubePlayerView;
 
+public class TiredActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //this.getSupportActionBar().hide();
         setContentView(R.layout.activity_tired);
 
         Button walkBtn = findViewById(R.id.btn_walk);
@@ -27,6 +30,15 @@ public class TiredActivity extends AppCompatActivity {
         });
 
 
+
+        Button yogaBtn = findViewById(R.id.yoga_btn_tasks);
+        yogaBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TiredActivity.this, YogaActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
