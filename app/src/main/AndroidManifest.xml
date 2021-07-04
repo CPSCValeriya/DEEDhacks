@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ca.deedhacks">
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +11,6 @@
         android:theme="@style/Theme.DEEDHacks">
         <activity android:name=".WalkActivity"></activity>
         <activity android:name=".TiredActivity" />
-        <activity android:name=".YogaActivity"></activity>
         <activity android:name=".TasksActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -21,11 +20,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <queries>
-        <intent>
-            <action android:name="com.google.android.youtube.api.service.START" />
-        </intent>
-    </queries>
 
 </manifest>
