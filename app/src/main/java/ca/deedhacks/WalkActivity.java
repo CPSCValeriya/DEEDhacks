@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.SystemClock;
 import android.os.Bundle;
 
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Chronometer;
 import android.widget.Button;
 import android.view.View;
@@ -28,7 +30,9 @@ public class WalkActivity extends AppCompatActivity{
     Timer timer;
     TimerTask timerTask;
     Double time = 0.0;
+    private  WebView wb;
 
+    //https://stackoverflow.com/questions/33389037/how-to-open-any-website-in-android-application-in-android-studio
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,12 @@ public class WalkActivity extends AppCompatActivity{
         stopStartButton = (Button) findViewById(R.id.btn_start);
 
         timer = new Timer();
+
+        wb=(WebView)findViewById(R.id.web_view);
+        WebSettings webSettings=wb.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        wb.loadUrl("https://www.alltrails.com/");
+
 
     }
 
