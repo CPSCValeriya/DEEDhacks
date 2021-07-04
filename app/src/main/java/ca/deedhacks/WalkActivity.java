@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.SystemClock;
 import android.os.Bundle;
 
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Chronometer;
 import android.widget.Button;
 import android.view.View;
@@ -28,10 +30,13 @@ public class WalkActivity extends AppCompatActivity{
     Timer timer;
     TimerTask timerTask;
     Double time = 0.0;
+    private  WebView wb;
 
+    //https://stackoverflow.com/questions/33389037/how-to-open-any-website-in-android-application-in-android-studio
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_walk);
 
         timerText = (TextView) findViewById(R.id.text_timer);
@@ -39,14 +44,11 @@ public class WalkActivity extends AppCompatActivity{
 
         timer = new Timer();
 
-        Button locationBtn = findViewById(R.id.location);
-        locationBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(WalkActivity.this, LocationActivity.class);
-                startActivity(intent);
-            }
-        });
+        wb=(WebView)findViewById(R.id.web_view);
+        WebSettings webSettings=wb.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        wb.loadUrl("https://www.alltrails.com/");
+
 
     }
 
@@ -93,13 +95,6 @@ public class WalkActivity extends AppCompatActivity{
             ifTimer = false;
             stopStartButton.setText("START");
 
-            int rounded = (int)Math.round(time);
-            int min = ((rounded % 86400) % 3600) / 60;
-            int hr = ((rounded % 86400) / 3600);
-            int pt = hr * 60 + min;
-            User user = User.getInstance();
-            user.addPoints(pt);
-
             timerTask.cancel();
         }
     }
@@ -140,7 +135,5 @@ public class WalkActivity extends AppCompatActivity{
 
         return String.format("%02d", hr) + ":" + String.format("%02d", min) + ":" + String.format("%02d", sec);
     }
-
-
 
 }

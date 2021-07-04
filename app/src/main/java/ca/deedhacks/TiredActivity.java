@@ -7,6 +7,8 @@ import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ListAdapter;
 
@@ -43,6 +45,15 @@ public class TiredActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TiredActivity.this, NapActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button caffBtn = findViewById(R.id.caffeine_btn_tasks);
+        caffBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TiredActivity.this, CaffeineActivity.class);
                 startActivity(intent);
             }
         });
