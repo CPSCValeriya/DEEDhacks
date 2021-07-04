@@ -84,6 +84,14 @@ public class NapActivity extends AppCompatActivity{
             ifTimer = false;
             stopStartButton.setText("START");
 
+            int rounded = (int)Math.round(time);
+            int min = ((rounded % 86400) % 3600) / 60;
+            int hr = ((rounded % 86400) / 3600);
+            int pt = hr * 60 + min;
+            User user = User.getInstance();
+            user.addPoints(pt);
+
+
             timerTask.cancel();
         }
     }

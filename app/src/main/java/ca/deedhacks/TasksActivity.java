@@ -23,5 +23,23 @@ public class TasksActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button StressedBtn = findViewById(R.id.stressed_btn_tasks);
+        StressedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TasksActivity.this, StressedActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button upsetBtn = findViewById(R.id.upset_btn_tasks);
+        upsetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TasksActivity.this, UpsetActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

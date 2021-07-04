@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3E3E3E"
+    tools:context=".StressedActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="284dp"
+        android:layout_height="274dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/musicicon" />
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="musicplay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView_play"
+        android:layout_width="62dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <Button
+        android:id="@+id/btn_pause"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="musicpause"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView_pause"
+        android:layout_width="62dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_media_pause" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="musicstop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView_stop"
+        android:layout_width="62dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+    <TextView
+        android:id="@+id/songNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="650dp"
+        android:gravity="center"
+        android:text="Meditation Time"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

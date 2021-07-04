@@ -17,8 +17,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DEEDHacks">
-        <activity android:name=".CaffeineActivity"></activity>
+        <activity android:name=".UpsetActivity"></activity>
+        <activity android:name=".StressedActivity" />
+        <activity android:name=".LocationActivity" />
         <activity android:name=".YogaActivity" />
+        <activity android:name=".CaffeineActivity"></activity>
         <activity android:name=".LeaderboardActivity" />
         <activity android:name=".WalkActivity" />
         <activity android:name=".NapActivity" />
