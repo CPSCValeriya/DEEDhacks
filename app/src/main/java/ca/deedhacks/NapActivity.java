@@ -55,6 +55,7 @@ public class NapActivity extends AppCompatActivity{
                     time = 0.0;
                     ifTimer = false;
                     timerText.setText(formatTime(0,0,0));
+                    stopStartButton.setText("START");
                 }
 
             }
