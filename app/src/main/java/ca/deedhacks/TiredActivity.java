@@ -40,6 +40,15 @@ public class TiredActivity extends AppCompatActivity{
             }
         });
 
+        Button napBtn = findViewById(R.id.nap_btn_tasks);
+        walkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TiredActivity.this, NapActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
