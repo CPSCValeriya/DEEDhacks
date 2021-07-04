@@ -20,6 +20,17 @@ public class TiredActivity extends AppCompatActivity{
         //this.getSupportActionBar().hide();
         setContentView(R.layout.activity_tired);
 
+        Button walkBtn = findViewById(R.id.btn_walk);
+        walkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TiredActivity.this, WalkActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         Button yogaBtn = findViewById(R.id.yoga_btn_tasks);
         yogaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
