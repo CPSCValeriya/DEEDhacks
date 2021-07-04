@@ -27,6 +27,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button leaderboardBtn = findViewById(R.id.leaderboard_btn_main);
+        leaderboardBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this,LeaderboardActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // valerie first comment
        // Maggie
     }

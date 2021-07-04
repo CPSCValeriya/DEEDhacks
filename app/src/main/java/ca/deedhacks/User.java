@@ -12,7 +12,7 @@ public class User {
 
     private User(){
 
-        name = "";
+        name = "Jane Doe";
         numPoints = 0;
         taskHistory = new ArrayList<>();
         pointsHistory = new ArrayList<>();
@@ -25,6 +25,34 @@ public class User {
             instance = new User();
         }
         return instance;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void addPoints(int addPoints) {
+        numPoints += addPoints;
+    }
+
+    public Integer getNumPoints() {
+        return numPoints;
+    }
+
+    public ArrayList<String> getTaskHistory() {
+        return taskHistory;
+    }
+
+    public void setTaskHistory(ArrayList<String> taskHistory) {
+        this.taskHistory = taskHistory;
+    }
+
+    public ArrayList<Integer> getPointsHistory() {
+        return pointsHistory;
+    }
+
+    public void setPointsHistory(ArrayList<Integer> pointsHistory) {
+        this.pointsHistory = pointsHistory;
     }
 
 }

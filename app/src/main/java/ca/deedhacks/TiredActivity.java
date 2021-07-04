@@ -21,6 +21,7 @@ public class TiredActivity extends AppCompatActivity{
         setContentView(R.layout.activity_tired);
 
         Button yogaBtn = findViewById(R.id.yoga_btn_tasks);
+
         yogaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
