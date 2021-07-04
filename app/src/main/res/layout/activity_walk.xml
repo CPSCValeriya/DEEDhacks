@@ -4,48 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:background="@drawable/walkbackground"
     tools:context=".WalkActivity">
 
     <Button
-        android:id="@+id/starter"
+        android:id="@+id/btn_reset"
         android:layout_width="wrap_content"
         android:layout_height="88dp"
-        android:layout_below="@+id/chronometer"
+        android:layout_below="@+id/text_timer"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="220dp"
         android:background="#5CCFCFCF"
-        android:text="start"
+        android:text="RESET"
         android:textAlignment="center"
         android:textColor="#E8E8E8"
         android:textSize="30sp"
-        app:backgroundTint="@null" />
+        app:backgroundTint="@null"
+        android:onClick="resetTapped"/>
 
     <Button
-        android:id="@+id/stopper"
+        android:id="@+id/btn_start"
         android:layout_width="wrap_content"
         android:layout_height="88dp"
-        android:layout_below="@+id/chronometer"
+        android:layout_below="@+id/text_timer"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="218dp"
         android:layout_marginEnd="50dp"
         android:layout_marginTop="30dp"
         android:background="#5CCFCFCF"
-        android:text="stop"
+        android:text="START"
         android:textAlignment="center"
         android:textColor="#E8E8E8"
         android:textSize="30sp"
-        app:backgroundTint="@null" />
+        app:backgroundTint="@null"
+        android:onClick="startStopTapped"/>
 
     <Button
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/chronometer"
+        android:layout_below="@+id/text_timer"
         android:layout_marginTop="180dp"
         android:background="@android:color/transparent"
         android:text="location set"
@@ -54,13 +57,20 @@
         android:textSize="50sp"
         app:backgroundTint="@null" />
 
-    <Chronometer
-        android:id="@+id/chronometer"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/text_timer"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="120dp"
-        android:gravity="center"
+        android:layout_marginEnd="100dp"
+        android:text="00:00:00"
+        android:textAlignment="center"
         android:textColor="#E8E8E8"
-        android:textSize="60sp" />
+        android:textSize="50sp" />
+
 
 </RelativeLayout>
