@@ -12,6 +12,7 @@
         <activity android:name=".LeaderboardActivity"></activity>
         <activity android:name=".YogaActivity" />
         <activity android:name=".WalkActivity"></activity>
+        <activity android:name=".NapActivity"></activity>
         <activity android:name=".TiredActivity" />
         <activity android:name=".TasksActivity" />
         <activity android:name=".MainActivity">
