@@ -15,7 +15,7 @@ public class TiredActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //this.getSupportActionBar().hide();
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_tired);
 
         Button walkBtn = findViewById(R.id.btn_walk);
