@@ -1,12 +1,22 @@
 package ca.deedhacks;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class LeaderboardActivity extends AppCompatActivity {
 
@@ -16,28 +26,48 @@ public class LeaderboardActivity extends AppCompatActivity {
     LeaderboardAdapter adapter;
     User user;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_leaderboard);
         user = user.getInstance();
 
         users = new ArrayList<>();
         points = new ArrayList<>();
 
-        users.add(user.getName());
-        points.add(user.getNumPoints());
+        Map<String, Integer> userScores = new HashMap<String, Integer>();
 
-        users.add("Amy");
-        users.add("Janey");
-        users.add("Mo");
-        users.add("Dia");
-        users.add("Alec");
-        points.add(42);
-        points.add(21);
-        points.add(18);
-        points.add(12);
-        points.add(6);
+        userScores.put("Amy", 42);
+        userScores.put("Jennifer", 21);
+        userScores.put("Mo", 8);
+        userScores.put("Dia", 12);
+        userScores.put("Alex",6);
+        userScores.put(user.getName(),user.getNumPoints());
+
+        List<Integer> sortUsersByPoints = new ArrayList<>(userScores.values());
+        Collections.sort(sortUsersByPoints,Collections.reverseOrder());
+
+        System.out.print("sortUsersByPoints:" + sortUsersByPoints);
+
+        List<Map.Entry<String, Integer>> list = new ArrayList<>(userScores.entrySet());
+        list.sort(Map.Entry.comparingByValue());
+        LinkedHashMap<Integer, String> sortedMap = new LinkedHashMap<>();
+        list.forEach(e -> {
+            sortedMap.put(e.getValue(), e.getKey());
+        });
+
+        TreeMap<Integer, String> tmap = new TreeMap<>(sortedMap);
+        sortedMap.clear();
+        sortedMap.putAll(tmap.descendingMap());
+
+        System.out.print("SORTED: " + sortedMap.keySet());
+        System.out.print("SORTED: " + sortedMap.values());
+
+
+        users = new ArrayList<>(sortedMap.values());
+        points = (ArrayList<Integer>)sortUsersByPoints;
 
         listview = (ListView) findViewById(R.id.listview_leaderboard);
         adapter = new LeaderboardAdapter(this, users, points);
